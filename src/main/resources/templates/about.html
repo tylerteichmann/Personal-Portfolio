@@ -1,149 +1,27 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
-    <title>Getting Started: Serving Web Content</title> 
+    <title>About Me</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <style>
-
-        html {
-            box-sizing: border-box;
-            font-family: Calibri, sans-serif;
-            font-size: 1.4vw;
-            word-wrap: break-word;
-        }
-
-        body {
-            margin: 0;
-            width: 100vw;
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 23.86vw 76.14vw;
-            grid-template-rows: 6.9vw 16.4vw 16.4vw 16.4vw;
-        }
-
-        p {
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        h2 {
-            font-size: 1.14285em;
-            font-weight: 100;
-        }
-
-        h3 {
-            font-size: 1em;
-        }
-
-        dl {
-            font-size: .85714em;
-        }
-
-        dt {
-            float: left;
-            clear: left;
-            margin-right: 0.5em;
-        }
-
-        dt::after {
-            content: ":";
-        }
-
-        dd {
-            margin-left: 0;
-        }
-
-        #logo {
-            grid-row: 1;
-            grid-column: 2 / 3;
-            display: block;
-            margin: .45vw .45vw .45vw auto;
-            width: 18vw;
-            height: 5.926vw;
-        }
-
-        .sidebar {
-            background-color: #002E75;
-            color: #FFFFFF;
-            border: solid 1pt #BE2543;
-            grid-row: 1 / 5;
-            grid-column: 1;
-        }
-
-        #profilepicture {
-            width: 18.75vw;
-            border: solid 7pt #BE2543;
-            display: block;
-            margin-left: auto;
-        }
-
-        h2, h3 {
-            text-align: center;
-        }
-
-        article {
-            padding: .05in .1in .05in .1in;
-        }
-
-        .bio {
-            grid-row: 2;
-            grid-column: 2 / 3;
-            padding: 0vw 2vw;
-        }
-
-        .bio h1 {
-            color: #15395F;
-            margin: 0;
-        }
-
-        .bio article {
-            border: solid 1pt #BE2543;
-            min-height: 11vw;
-        }
-
-        .skills-grid {
-            grid-row: 3 / 5;
-            grid-column: 2 / 3;
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
-            grid-template-rows: auto auto;
-        }
-
-        .skills-grid .article-titles {
-            background-color: #002E75;
-            color: #FFFFFF;
-            height: 4.12vw;
-            display: flex;
-            flex-direction: row;
-            align-content: space-evenly;
-        }
-
-        .skills-grid img {
-            height: 3.75vw;
-            display: inline-block;
-        }
-
-        .skills-grid h2 {
-            /* height: 3.75vw; */
-            margin: 0;
-            display: inline-block;
-        }
-
-    </style>
+    <!-- Import my css stylesheet in static -->
+    <link th:href="@{/about.css}" rel="stylesheet">
 </head>
 <body>
     <main>
+        <!-- WaV2T Logo -->
         <img th:src="@{/wav2t.png}" alt="Washington Vets to Tech logo." id="logo">
+        <!-- Side bar of the webpage -->
         <section class="sidebar">
-            <img th:src="@{/profilepicture.jpg}" alt="Profile picture." id="profilepicture">
-            <img th:src="@{/army.png}" alt="The seal of the United States Army">
-            <h2><u>Tyler J Teichmann</u></h2>
+            <!-- Profile picture for the about page -->
+            <img th:src="@{/profilepicture.jpg}" alt="Profile picture." id="profile-picture">
+            <!-- Branch of Services -->
+            <img th:src="@{/army.png}" alt="The seal of the United States Army" id="seal">
+            <!-- Name -->
+            <h2>Tyler J Teichmann</h2>
+            <img th:src="@{/line.png}">
+            <!-- Cohort -->
             <h2>Cloud Application Development</h2>
+            <!-- Article containing information for employers -->
             <article>
                 <h3><u>Information for Employers</u></h3>
                 <dl>
@@ -157,25 +35,30 @@
                     <dt>Security Clearance expiration</dt><dd><date>July, 2026</date></dd>
                 </dl>
             </article>
+            <!-- Article containing contact Information -->
             <article>
                 <h3><u>Contact Information</u></h3>
                 <dl>
                     <dt>Phone</dt><dd>(847) 421-4433</dd>
-                    <dt>Email</dt><dd>tyler.j.teichmann@gmail.com</dd>
+                    <dt>Email</dt><dd><a href="mailto:tyler.j.teichmann@gmail.com">tyler.j.teichmann@gmail.com</a></dd>
                     <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/tylerjteichmann/">https://www.linkedin.com/in/tylerjteichmann/</a></dd>
                     <dt>Location</dt><dd><address>DuPont, WA</address></dd>
                 </dl>
             </article>
         </section>
+        <!-- Bio section of the webpage -->
         <section class="bio">
             <h1>Professional Statement</h1>
+            <!-- Article containing my bio / professional statement -->
             <article>
-                <p class="professionalstatement">
+                <p id="professional-statement">
                     Transitioning United States Army Field Artillery and Ranger Regiment Officer with seven years of proven leadership experience and technical expertise, eager to explore my passion for software development, data analytics and information technology. My expertise in operations and adaptability serve as a solid foundation that enables me to drive innovation and achieve success in the technology industry.
                 </p>
             </article>
         </section>
-        <section class="skills-grid">
+        <!-- Skills section of the webpage -->
+        <section class="skills">
+            <!-- Article containing my interested careers -->
             <article>
                 <div class="article-titles">
                     <img th:src="@{/jobs.png}" alt="Image of a resume">
@@ -188,6 +71,7 @@
                     <li>Web development</li>
                 </ul>
             </article>
+            <!-- Article containing my education -->
             <article>
                 <div class="article-titles">
                     <img th:src="@{/education.png}" alt="Image of books and a graduation cap">
@@ -198,6 +82,7 @@
                     <li>Washington Vets 2 Tech Graduate – Cloud Application Development</li>
                 </ul>
             </article>
+            <!-- Article containing my skills -->
             <article>
                 <div class="article-titles">
                     <img th:src="@{/skills.png}" alt="Image of a professor">
@@ -212,6 +97,7 @@
                     <li>MS Office 365</li>
                 </ul>
             </article>
+            <!-- Article containing my certifications -->
             <article>
                 <div class="article-titles">
                     <img th:src="@{/certifications.png}" alt="Image of a certificate">
@@ -221,6 +107,7 @@
                     <li>None</li>
                 </ul>
             </article>
+            <!-- Article containing my Projects and experience -->
             <article>
                 <div class="article-titles">
                     <img th:src="@{/projects.png}" alt="Image of a clipboard">
@@ -230,6 +117,7 @@
                     <li>GitHub projects: <a href="https://github.com/tylerteichmann">https://github.com/tylerteichmann</a></li>
                 </ul>
             </article>
+            <!-- Article containing my interests and hobbies -->
             <article>
                 <div class="article-titles">
                     <img th:src="@{/hobbies.png}" alt="Image of a instruments">
@@ -245,8 +133,5 @@
             </article>
         </section>
     </main>
-    <footer>
-
-    </footer>
 </body>
 </html>

@@ -1,0 +1,154 @@
+/* Default styling for all elements */
+html * {
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+    font-size: calc(10pt + .4vw);
+    margin: 0;
+}
+
+/* Set the Body width equal to the size of the viewport */
+body {
+    width: 100%;
+}
+
+/* Create a CSS grid in the main section that is at least as large as the viewport heigh */
+main {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: min-content min-content auto;
+    min-height: 100vh;
+}
+
+/* Set the color of the main heading and make it twice the size of the default font */
+h1 {
+    font-size: 2em;
+    color: #15395F;
+}
+
+/* Set the size of the second heading to 1.2 the size of the default font, unbold, align center*/
+h2 {
+    font-size: 1.2em;
+    font-weight: 100;
+    text-align: center;
+}
+
+/* Set the size of the third heading to be the same as the default font, align center */
+h3 {
+    font-size: 1em;
+    text-align: center;
+}
+
+/* add standard text padding to all articles */
+article {
+    padding: .05in .1in .05in .1in;
+}
+
+/* Set the size of all descriptive lists to .8 the size of the default */
+dl {
+    font-size: .8em;
+}
+
+/* Float the item to the left and add a margin space for the descriptions*/
+dt {
+    float: left;
+    margin-right: .25em;
+}
+
+/* Add a colon to separate descriptions from items */
+dt::after {
+    content: ": ";
+}
+
+/* Assign the logo to the fist row and second column add a margin and set width to 25% of the viewport width*/
+#logo {
+    grid-row: 1;
+    grid-column: 2;
+    margin: .45vw .45vw .45vw auto;
+    width: 25vw;
+}
+
+/* Style the side bar at least 150 pixels and at most 25% of the viewport width, change the background and font color, add a small border, assign it to the first column and rows 1 to 3 */
+.sidebar {
+    min-width: 150px;
+    max-width: 25vw;
+    background-color: #002E75;
+    color: #FFFFFF;
+    border: solid 1pt #BE2543;
+    grid-row: 1 / 4;
+    grid-column: 1;
+}
+
+/* Style all links in the side bar to white and to break the word if wrapping */
+.sidebar a,.sidebar a:visited {
+    word-wrap: break-word;
+    color: #FFFFFF;
+}
+
+/* Style all images in the side bar to block elements that are 75% of the sidebar and have a top and bottom margin 25% of the default font and left and right margin set to auto */
+.sidebar img {
+    display: block;
+    width: 75%;
+    margin: .25em auto;
+}
+
+/* Add a red border around the profile picture and set the margins to position it slightly right and allow the seal to overlap*/
+#profile-picture {
+    border: solid 7pt #BE2543;
+    margin: 5% 5% -10% auto;
+}
+
+/* Set the size of the seal to 20% of the sidebar and offset it 10% to the right */
+#seal {
+    width: 20%;
+    margin-right: 70%;
+}
+
+/* Assign the bio to row 2 of column 2 with left and right padding */
+.bio {
+    grid-row: 2;
+    grid-column: 2;
+    padding: 0vw 2vw;
+}
+
+/* style the article in the bio section with a small red border and to be at least 25% of the view height */
+.bio article {
+    border: solid 1pt #BE2543;
+    min-height: 25vh;
+}
+
+/* Assign the skills section to the 3rd row of the 2nd column, make it a flex container with row wrap and space the items evenly*/
+.skills {
+    grid-row: 3;
+    grid-column: 2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+/* Set the flex items in in the skills section to grow evenly but have a min with of 300px*/
+.skills > * {
+    flex: 1 0 300px;
+}
+
+/* Set the article title containers with a blue background and white font and a height of 65 pixels */
+.article-titles {
+    background-color: #002E75;
+    color: #FFFFFF;
+    height: 65px;
+}
+
+/* Set all elments in the container to  be inline block elements with a heigh 95% of the height of the container, align vertically in the middle, and a 5% margin on the left and right */
+.article-titles * {
+    height: 95%;
+    margin: auto 5%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Set the heading in the article-title container to a width of 70%, override the height back to auto with a max of 95% and a -10% left margin to overlap the image */
+.article-titles h2 {
+    width: 70%;
+    height: auto;
+    max-height: 95%;
+    margin: auto -10%;
+}
