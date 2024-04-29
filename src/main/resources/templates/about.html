@@ -3,8 +3,250 @@
 <head> 
     <title>Getting Started: Serving Web Content</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+
+        html {
+            box-sizing: border-box;
+            font-family: Calibri, sans-serif;
+            font-size: 1.4vw;
+            word-wrap: break-word;
+        }
+
+        body {
+            margin: 0;
+            width: 100vw;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 23.86vw 76.14vw;
+            grid-template-rows: 6.9vw 16.4vw 16.4vw 16.4vw;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.14285em;
+            font-weight: 100;
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+
+        dl {
+            font-size: .85714em;
+        }
+
+        dt {
+            float: left;
+            clear: left;
+            margin-right: 0.5em;
+        }
+
+        dt::after {
+            content: ":";
+        }
+
+        dd {
+            margin-left: 0;
+        }
+
+        #logo {
+            grid-row: 1;
+            grid-column: 2 / 3;
+            display: block;
+            margin: .45vw .45vw .45vw auto;
+            width: 18vw;
+            height: 5.926vw;
+        }
+
+        .sidebar {
+            background-color: #002E75;
+            color: #FFFFFF;
+            border: solid 1pt #BE2543;
+            grid-row: 1 / 5;
+            grid-column: 1;
+        }
+
+        #profilepicture {
+            width: 18.75vw;
+            border: solid 7pt #BE2543;
+            display: block;
+            margin-left: auto;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        article {
+            padding: .05in .1in .05in .1in;
+        }
+
+        .bio {
+            grid-row: 2;
+            grid-column: 2 / 3;
+            padding: 0vw 2vw;
+        }
+
+        .bio h1 {
+            color: #15395F;
+            margin: 0;
+        }
+
+        .bio article {
+            border: solid 1pt #BE2543;
+            min-height: 11vw;
+        }
+
+        .skills-grid {
+            grid-row: 3 / 5;
+            grid-column: 2 / 3;
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: auto auto;
+        }
+
+        .skills-grid .article-titles {
+            background-color: #002E75;
+            color: #FFFFFF;
+            height: 4.12vw;
+            display: flex;
+            flex-direction: row;
+            align-content: space-evenly;
+        }
+
+        .skills-grid img {
+            height: 3.75vw;
+            display: inline-block;
+        }
+
+        .skills-grid h2 {
+            /* height: 3.75vw; */
+            margin: 0;
+            display: inline-block;
+        }
+
+    </style>
 </head>
 <body>
-    <p th:text="|Hello, ${name}!|" />
+    <main>
+        <img th:src="@{/wav2t.png}" alt="Washington Vets to Tech logo." id="logo">
+        <section class="sidebar">
+            <img th:src="@{/profilepicture.jpg}" alt="Profile picture." id="profilepicture">
+            <img th:src="@{/army.png}" alt="The seal of the United States Army">
+            <h2><u>Tyler J Teichmann</u></h2>
+            <h2>Cloud Application Development</h2>
+            <article>
+                <h3><u>Information for Employers</u></h3>
+                <dl>
+                    <dt>Earliest availability</dt><dd><date>July 1, 2024</date></dd>
+                    <dt>Preferred location(s)</dt><dd><address>Denver, Colorado</address></dd>
+                    <dt>Willing to relocate</dt><dd><b>No</b></dd>
+                    <dt>Open to remote</dt><dd><b>Yes</b></dd>
+                    <dt>Military Background</dt><dd><a href="https://www.goarmy.com/careers-and-jobs/career-match/ground-forces/explosives-artillery/13a-field-artillery-officer.html">13A Field Artillery Officer</a></dd>
+                    <br>
+                    <dt>Security Clearance</dt><dd>TS/SCI</dd>
+                    <dt>Security Clearance expiration</dt><dd><date>July, 2026</date></dd>
+                </dl>
+            </article>
+            <article>
+                <h3><u>Contact Information</u></h3>
+                <dl>
+                    <dt>Phone</dt><dd>(847) 421-4433</dd>
+                    <dt>Email</dt><dd>tyler.j.teichmann@gmail.com</dd>
+                    <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/tylerjteichmann/">https://www.linkedin.com/in/tylerjteichmann/</a></dd>
+                    <dt>Location</dt><dd><address>DuPont, WA</address></dd>
+                </dl>
+            </article>
+        </section>
+        <section class="bio">
+            <h1>Professional Statement</h1>
+            <article>
+                <p class="professionalstatement">
+                    Transitioning United States Army Field Artillery and Ranger Regiment Officer with seven years of proven leadership experience and technical expertise, eager to explore my passion for software development, data analytics and information technology. My expertise in operations and adaptability serve as a solid foundation that enables me to drive innovation and achieve success in the technology industry.
+                </p>
+            </article>
+        </section>
+        <section class="skills-grid">
+            <article>
+                <div class="article-titles">
+                    <img th:src="@{/jobs.png}" alt="Image of a resume">
+                    <h2>Career Areas of Interest</h2>
+                </div>
+                <ul>
+                    <li>Software Engineer</li>
+                    <li>Data Analyst</li>
+                    <li>DevOps</li>
+                    <li>Web development</li>
+                </ul>
+            </article>
+            <article>
+                <div class="article-titles">
+                    <img th:src="@{/education.png}" alt="Image of books and a graduation cap">
+                    <h2>Education</h2>
+                </div>
+                <ul>
+                    <li>B.A. Marquette University</li>
+                    <li>Washington Vets 2 Tech Graduate – Cloud Application Development</li>
+                </ul>
+            </article>
+            <article>
+                <div class="article-titles">
+                    <img th:src="@{/skills.png}" alt="Image of a professor">
+                    <h2>Additional Skills</h2>
+                </div>
+                <ul>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>HTML/CSS/JavaScript</li>
+                    <li>C</li>
+                    <li>SQLite, MS Access</li>
+                    <li>MS Office 365</li>
+                </ul>
+            </article>
+            <article>
+                <div class="article-titles">
+                    <img th:src="@{/certifications.png}" alt="Image of a certificate">
+                    <h2>Certifications</h2>
+                </div>
+                <ul>
+                    <li>None</li>
+                </ul>
+            </article>
+            <article>
+                <div class="article-titles">
+                    <img th:src="@{/projects.png}" alt="Image of a clipboard">
+                    <h2>Projects/Experience</h2>
+                </div>
+                <ul>
+                    <li>GitHub projects: <a href="https://github.com/tylerteichmann">https://github.com/tylerteichmann</a></li>
+                </ul>
+            </article>
+            <article>
+                <div class="article-titles">
+                    <img th:src="@{/hobbies.png}" alt="Image of a instruments">
+                    <h2>Interests/Hobbies</h2>
+                </div>
+                <ul>
+                    <li>Video Gaming</li>
+                    <li>Finance</li>
+                    <li>Music</li>
+                    <li>Climbing, Hiking</li>
+                    <li>Travel</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
